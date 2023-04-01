@@ -1,0 +1,14 @@
+import os
+import pandas as pd
+
+# create a new directory
+directory = 'new_directory'
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+# create a sample dataframe
+df = pd.DataFrame({'col1': [1, 2, 3], 'col2': ['a', 'b', 'c']})
+
+# save the dataframe to a CSV file in the new directory
+file_path = os.path.join(directory, 'data.csv')
+df.to_csv(file_path, index=False)
